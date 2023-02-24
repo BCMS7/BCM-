@@ -1,0 +1,85 @@
+<head>
+    <style>
+
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #2cdb61;
+            letter-spacing: 0.2em;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #1f8f41;
+            position: absolute;
+            animation: load 0.7s infinite alternate ease-in-out;
+        }
+
+        .loader::before {
+            top: 0;
+        }
+
+        .loader::after {
+            bottom: 0;
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px;
+            }
+            50% {
+                height: 8px;
+                width: 40px;
+            }
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px;
+            }
+        }
+
+        /* Fade out the loader and the body after 6 seconds */
+        .loader {
+            opacity: 1;
+            animation: fadeOut 1s ease-in-out 6s forwards;
+        }
+
+        body.fade-out {
+            opacity: 0;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        // Your JavaScript code here
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('fade-out');
+            }, 6000); // 6 seconds
+        }
+    </script>
+    <div class="loader">Loading BCME</div>
+</head>
