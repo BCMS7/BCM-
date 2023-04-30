@@ -1,7 +1,5 @@
 <head>
     <style>
-
-
         .loader {
             width: 250px;
             height: 50px;
@@ -54,8 +52,6 @@
                 width: 15px;
             }
         }
-
-        /* Fade out the loader and the body after 6 seconds */
         .loader {
             opacity: 1;
             animation: fadeOut 1s ease-in-out 6s forwards;
@@ -75,11 +71,10 @@
         }
     </style>
     <script>
-        // Your JavaScript code here
         window.onload = function() {
             setTimeout(function() {
                 document.querySelector('body').classList.add('fade-out');
-            }, 6000); // 6 seconds
+            }, 6000);
         }
     </script>
     <div class="loader">Loading BCME</div>
